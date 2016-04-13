@@ -35,8 +35,9 @@ class EditAccountForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(EditAccountForm, self).__init__(*args, **kwargs)
-        self.fields['product_range'].help_text = (
-            "You may need to create a product range first")
+        if 'product_range' in self.fields:
+            self.fields['product_range'].help_text = (
+                "You may need to create a product range first")
 
         # Add field for account type (if there is a choice)
         deferred_income = AccountType.objects.get(name=names.DEFERRED_INCOME)

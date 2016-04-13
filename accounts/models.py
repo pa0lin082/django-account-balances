@@ -32,3 +32,6 @@ class AccountSecondaryUsers(models.Model):
     # explicitly link to the custom model here, if defined, to ease migration
     account = models.ForeignKey(Account)
     user = models.ForeignKey(AUTH_USER_MODEL)
+
+    class Meta:
+        auto_created = True

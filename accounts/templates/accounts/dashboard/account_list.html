@@ -36,7 +36,8 @@
         </div>
 
         <form method="get" action="." class="form-horizontal">
-            {% include 'partials/form_fields.html' %}
+{#            {% include 'partials/form_fields.html' %}#}
+            {{ form }}
             <button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
             {% trans "or" %} <a href="{% url 'accounts-list' %}">{% trans "reset" %}</a>.
         </form>
@@ -51,6 +52,7 @@
             <tr>
                 <th>{% trans "Name" %}</th>
                 <th>{% trans "Code" %}</th>
+                <th>{% trans "Primary User" %}</th>
                 <th>{% trans "Status" %}</th>
                 <th>{% trans "Start date" %}</th>
                 <th>{% trans "End date" %}</th>
@@ -64,6 +66,7 @@
                 <tr {% if account.is_frozen %}style="color: #aaa"{% endif %}>
                     <td><a href="{% url 'accounts-detail' account.id %}">{{ account.name|default:"-" }}</a></td>
                     <td>{{ account.code|default:"-" }}</td>
+                    <td>{{ account.primary_user|default:"-" }}</td>
                     <td>{{ account.status }}</td>
                     <td>{{ account.start_date|default:"-" }}</td>
                     <td>{{ account.end_date|default:"-" }}</td>

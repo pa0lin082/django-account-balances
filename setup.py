@@ -24,5 +24,5 @@ setup(name='django-account-balances',
           'Programming Language :: Python'],
       install_requires=[
           'python-dateutil>=2.1,<2.2',
-          'django-treebeard>=2.0b2',
+          'django-treebeard==2.0b2',
           ])
