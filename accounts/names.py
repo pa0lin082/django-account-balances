@@ -19,6 +19,7 @@ UNPAID_ACCOUNTS = getattr(settings, 'ACCOUNTS_UNPAID_SOURCES',
 
 # Account where money is transferred from when creating a giftcard
 BANK = getattr(settings, 'ACCOUNTS_BANK_NAME', "Bank")
+BANK_TIME = getattr(settings, 'ACCOUNTS_BANK_TIME_NAME', "Bank Time")
 
 # Account types
 # =============
